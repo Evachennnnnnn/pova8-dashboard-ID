@@ -17,7 +17,22 @@ body::before { content:""; position:fixed; inset:0; pointer-events:none; backgro
 .card { background:var(--card); border:1px solid rgba(255,255,255,.35); border-radius:18px; padding:18px 20px; box-shadow: 0 14px 35px rgba(2,6,23,.18); backdrop-filter: blur(12px); }
 .kpi { position:relative; overflow:hidden; }
 .kpi::after { content:""; position:absolute; inset:auto -20% -50% auto; width:110px; height:110px; border-radius:50%; background: radial-gradient(circle, rgba(96,165,250,.14), transparent 70%); }
-.kpi .label { font-size:12px; color:#334155; margin-bottom:8px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; } .kpi .value { font-size:30px; font-weight:900; line-height:1.05; color:#020617; } .kpi .sub { font-size:12px; margin-top:8px; color:#475569; }
+.kpi .label { font-size:12px; color:#334155; margin-bottom:8px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; display:flex; justify-content:space-between; align-items:center; } .kpi .value { font-size:30px; font-weight:900; line-height:1.05; color:#020617; display:flex; align-items:center; gap:8px; } .kpi .sub { font-size:12px; margin-top:8px; color:#475569; }
+.trend-arrow { font-size:14px; font-weight:700; }
+.trend-up { color:#059669; }
+.trend-down { color:#dc2626; }
+.trend-flat { color:#64748b; }
+.status-dot { width:8px; height:8px; border-radius:50%; display:inline-block; }
+.status-green { background:#10b981; box-shadow:0 0 6px rgba(16,185,129,.6); }
+.status-yellow { background:#f59e0b; box-shadow:0 0 6px rgba(245,158,11,.6); }
+.status-red { background:#ef4444; box-shadow:0 0 6px rgba(239,68,68,.6); }
+.hero { background:linear-gradient(135deg, rgba(99,102,241,.95), rgba(168,85,247,.95)); border-radius:20px; padding:28px; margin-bottom:20px; color:#fff; box-shadow:0 20px 50px rgba(0,0,0,.2); position:relative; overflow:hidden; }
+.hero::before { content:""; position:absolute; right:-60px; top:-60px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle, rgba(255,255,255,.15), transparent 70%); }
+.hero h3 { margin:0 0 12px; font-size:22px; font-weight:800; }
+.hero-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:16px; margin-top:16px; }
+.hero-stat { background:rgba(255,255,255,.15); border-radius:12px; padding:14px; backdrop-filter:blur(8px); }
+.hero-stat-label { font-size:11px; opacity:.85; margin-bottom:6px; font-weight:600; }
+.hero-stat-value { font-size:20px; font-weight:900; }
 .section { background: rgba(255,255,255,.93); border:1px solid rgba(255,255,255,.35); border-radius:20px; padding:20px; box-shadow: 0 14px 35px rgba(2,6,23,.18); backdrop-filter: blur(12px); margin-bottom:16px; }
 .section h2 { margin:0 0 12px; font-size:17px; color:#0f172a; }
 .chart { position:relative; height:340px; } .chart.sm { height:280px; }
@@ -36,20 +51,37 @@ body::before { content:""; position:fixed; inset:0; pointer-events:none; backgro
 <div class="header">
   <h1>🇮🇩 印尼 POVA 8 声量监控看板</h1>
   <p>Google Trends + TikTok Video View + TikTok Search + 消耗进度 + 曝光KPI · 数据更新至 7月24日</p>
-  <div class="footer-meta">
-    <span class="pill">⚡ 实时战报风格</span>
-    <span class="pill">📈 重点看趋势，不只看单点</span>
-    <span class="pill">🎯 适合周报/晨会展示</span>
-  </div>
 </div>
 <div class="container">
+  <div class="hero">
+    <h3>📊 整体战报摘要</h3>
+    <p style="margin:0;opacity:.95;font-size:13px;">当前印尼 POVA 8 声量表现稳健，多项指标持续走高</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-label">🔥 核心亮点</div>
+        <div class="hero-stat-value">产品 SOV 18.39%</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">✅ 超 KPI 指标</div>
+        <div class="hero-stat-value">TT VV SOV 128%</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">⚠️ 需关注</div>
+        <div class="hero-stat-value">Search SOV 53%</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">💰 预算健康度</div>
+        <div class="hero-stat-value">消耗 12.5%</div>
+      </div>
+    </div>
+  </div>
   <div class="grid kpis">
-    <div class="card kpi"><div class="label">Google 品牌 SOV（最新）</div><div class="value">10.11%</div><div class="sub">近16日均值 10.16%</div></div>
-    <div class="card kpi"><div class="label">Google 产品 SOV（最新）</div><div class="value">18.39%</div><div class="sub">近16日均值 10.97%</div></div>
-    <div class="card kpi"><div class="label">TikTok VV SOV（最新）</div><div class="value">12.84%</div><div class="sub">近13日均值 10.40%</div></div>
-    <div class="card kpi"><div class="label">TikTok Search SOV（最新）</div><div class="value">5.33%</div><div class="sub">近13日均值 5.42%</div></div>
-    <div class="card kpi" style="border-left:4px solid var(--purple);"><div class="label">消耗进度（最新）</div><div class="value" style="color:var(--purple);">12.51%</div><div class="sub">截至 7月21日 · 日消耗 ¥2,909</div></div>
-    <div class="card kpi" style="border-left:4px solid var(--teal);"><div class="label">曝光完成进度（最新）</div><div class="value" style="color:var(--teal);">35.53%</div><div class="sub">曝光目标 1200M · 累计 426.4M</div></div>
+    <div class="card kpi"><div class="label">Google 品牌 SOV（最新）<span class="status-dot status-yellow"></span></div><div class="value">10.11% <span class="trend-arrow trend-flat">→</span></div><div class="sub">近16日均值 10.16%</div></div>
+    <div class="card kpi"><div class="label">Google 产品 SOV（最新）<span class="status-dot status-green"></span></div><div class="value">18.39% <span class="trend-arrow trend-up">↑</span></div><div class="sub">近16日均值 10.97%</div></div>
+    <div class="card kpi"><div class="label">TikTok VV SOV（最新）<span class="status-dot status-green"></span></div><div class="value">12.84% <span class="trend-arrow trend-up">↑</span></div><div class="sub">近13日均值 10.40%</div></div>
+    <div class="card kpi"><div class="label">TikTok Search SOV（最新）<span class="status-dot status-yellow"></span></div><div class="value">5.33% <span class="trend-arrow trend-down">↓</span></div><div class="sub">近13日均值 5.42%</div></div>
+    <div class="card kpi" style="border-left:4px solid var(--purple);"><div class="label">消耗进度（最新）<span class="status-dot status-green"></span></div><div class="value" style="color:var(--purple);">12.51% <span class="trend-arrow trend-up">↑</span></div><div class="sub">截至 7月21日 · 日消耗 ¥2,909</div></div>
+    <div class="card kpi" style="border-left:4px solid var(--teal);"><div class="label">曝光完成进度（最新）<span class="status-dot status-green"></span></div><div class="value" style="color:var(--teal);">35.53% <span class="trend-arrow trend-up">↑</span></div><div class="sub">曝光目标 1200M · 累计 426.4M</div></div>
   </div>
   <div class="two-col">
     <div class="section">
