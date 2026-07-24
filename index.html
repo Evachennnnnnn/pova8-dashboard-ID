@@ -38,7 +38,6 @@
     <div class="card kpi"><div class="label">TikTok Search SOV（最新）</div><div class="value">5.33%</div><div class="sub">近13日均值 5.42%</div></div>
     <div class="card kpi" style="border-left:4px solid var(--purple);"><div class="label">消耗进度（最新）</div><div class="value" style="color:var(--purple);">12.51%</div><div class="sub">截至 7月21日 · 日消耗 ¥2,909</div></div>
     <div class="card kpi" style="border-left:4px solid var(--teal);"><div class="label">曝光完成进度（最新）</div><div class="value" style="color:var(--teal);">35.53%</div><div class="sub">曝光目标 1200M · 累计 426.4M</div></div>
->>>>>>> 753046e (更新看板数据：Google至7/24，TikTok/消耗/曝光至7/21)
   </div>
   <div class="two-col">
     <div class="section">
@@ -93,7 +92,6 @@ const spendLabels = ["7月9日","7月10日","7月11日","7月12日","7月13日",
 const spendProgress = [0.35,1.15,1.93,2.66,3.34,4.00,4.39,5.17,6.00,7.30,8.84,10.20,12.51];
 const exposureProgress = [3.24,6.00,8.87,12.12,14.78,17.01,19.42,22.11,24.83,27.67,30.53,32.62,35.53];
 const spendAmount = [441.60,1001.65,985.94,918.63,863.13,827.79,492.79,979.98,1050.50,1635.80,1935.05,1723.22,2909.19];
->>>>>>> 753046e (更新看板数据：Google至7/24，TikTok/消耗/曝光至7/21)
 function commonLineOptions(yLabel) { return { responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom' } }, scales:{ y:{ beginAtZero:true, ticks:{ callback:(v)=>v+'%' }, title:{ display:true, text:yLabel } } } }; }
 new Chart(document.getElementById('gtChart'), { type:'line', data:{ labels:gtLabels, datasets:[{ label:'POVA 8 5G 搜索热度', data:gtValues, borderColor:'#4285f4', backgroundColor:'rgba(66,133,244,.12)', tension:.35, fill:true, pointRadius:2, pointHoverRadius:5 }]}, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom' } }, scales:{ y:{ beginAtZero:true, max:100, title:{ display:true, text:'搜索热度（峰值=100）' } } } } });
 new Chart(document.getElementById('googleChart'), { type:'line', data:{ labels:googleLabels, datasets:[{ label:'品牌 SOV（TECNO）', data:googleBrand, borderColor:'#4f46e5', backgroundColor:'rgba(79,70,229,.10)', tension:.35, fill:true, pointRadius:3 },{ label:'产品 SOV（POVA 8 5G）', data:googleProduct, borderColor:'#f97316', backgroundColor:'rgba(249,115,22,.10)', tension:.35, fill:true, pointRadius:3 }]}, options: commonLineOptions('Google SOV') });
