@@ -59,7 +59,7 @@ body::before { content:""; position:fixed; inset:0; pointer-events:none; backgro
 <body>
 <div class="header">
   <h1>🇮🇩 印尼 POVA 8 声量监控看板</h1>
-  <p>Google Trends + TikTok Video View + TikTok Search + 消耗进度 + 曝光KPI + 爆款视频 · 数据更新至 7月27日 · 自动更新于 7月27日</p>
+  <p>Google Trends + TikTok Video View + TikTok Search + 消耗进度 + 曝光KPI + 爆款视频 + 广告舆情 · 数据更新至 7月27日 · 自动更新于 7月27日</p>
 </div>
 <div class="container">
   <div class="hero">
@@ -95,6 +95,7 @@ body::before { content:""; position:fixed; inset:0; pointer-events:none; backgro
     <div class="card kpi" style="border-left:4px solid #ef4444;"><div class="label">Youtube曝光 <span class="status-dot status-green"></span></div><div class="value" style="color:#ef4444;">69.0M</div><div class="sub">截至 7/27</div></div>
     <div class="card kpi" style="border-left:4px solid #6366f1;"><div class="label">DM总曝光 <span class="status-dot status-green"></span></div><div class="value" style="color:#6366f1;">767.9M</div><div class="sub">= Meta 113.0M + TT 585.9M + Youtube 69.0M</div></div>
     <div class="card kpi" style="border-left:4px solid #f59e0b;"><div class="label">3M 爆款视频数量 <span class="status-dot status-yellow"></span></div><div class="value" style="color:#f59e0b;">24<span style="font-size:16px;color:var(--muted);">/30条</span></div><div class="sub">KPI 完成 80% · 差 6 条达标</div></div>
+    <div class="card kpi" style="border-left:4px solid #14b8a6;"><div class="label">广告舆情正面率 <span class="status-dot status-green"></span></div><div class="value" style="color:#14b8a6;">13.6%</div><div class="sub">3,607 条评论 · 负面率 1.7% · 总互动 46,659</div></div>
   </div>
   <div class="section">
     <h2><span class="badge" style="background:#fef3c7;color:#92400e;">🏆</span>曝光核心贡献榜 TOP 5</h2>
@@ -151,6 +152,31 @@ body::before { content:""; position:fixed; inset:0; pointer-events:none; backgro
     <div class="note">消耗进度从 7/9 的 0.35% 增长至 7/26 的 44.88%，累计消耗 ¥80,426。TT曝光完成进度从 3.24% 增长至 48.83%（TT目标 1200M）。7/22-25 为消耗高峰日（单日 ¥3,993-7,068），7/26 消耗放缓至 ¥4,449。</div>
   </div>
   <div class="section">
+    <h2><span class="badge" style="background:#f0fdfa;color:#14b8a6;">💬</span>广告舆情健康度</h2>
+    <div class="two-col" style="gap:12px;margin-bottom:12px;">
+      <div style="text-align:center;padding:12px;background:#f0fdfa;border-radius:12px;">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:4px;">正面评论</div>
+        <div style="font-size:24px;font-weight:800;color:#10b981;">185 条</div>
+        <div style="font-size:11px;color:var(--muted);">13.6%</div>
+      </div>
+      <div style="text-align:center;padding:12px;background:#fef2f2;border-radius:12px;">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:4px;">负面评论</div>
+        <div style="font-size:24px;font-weight:800;color:#ef4444;">23 条</div>
+        <div style="font-size:11px;color:var(--muted);">1.7%</div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">🔥 热门评论 TOP 3</div>
+    <div style="background:#fafbff;border-radius:8px;padding:10px;font-size:12px;margin-bottom:8px;">
+      <div style="margin-bottom:6px;"><span style="color:#f59e0b;font-weight:600;">👍15,845</span> udah di skip, balik lagi krna dnger redred</div>
+      <div style="margin-bottom:6px;"><span style="color:#f59e0b;font-weight:600;">👍7,267</span> min kalo beli dapat keonho gak🥰</div>
+      <div><span style="color:#f59e0b;font-weight:600;">👍6,858</span> pake penglaris njir</div>
+    </div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:6px;">⚠️ 负面舆情主题</div>
+    <div style="background:#fef2f2;border-radius:8px;padding:10px;font-size:11px;color:#991b1b;">
+      主要负面评论集中在"手机卡顿/发热"、"品牌质量质疑"，但负面率仅 1.7%，点赞极低（最高2赞），整体舆情健康可控。
+    </div>
+  </div>
+  <div class="section">
     <h2><span class="badge">一页总览</span>最新关键数据</h2>
     <table class="table">
       <thead><tr><th>模块</th><th>最新值</th><th>KPI（完成进度）</th><th>日期</th><th>说明</th></tr></thead>
@@ -165,9 +191,10 @@ body::before { content:""; position:fixed; inset:0; pointer-events:none; backgro
         <tr><td style="color:#ef4444;font-weight:600;">Youtube曝光</td><td style="color:#ef4444;font-weight:700;">69.0M</td><td>—</td><td>7月27日</td><td>Youtube 平台曝光</td></tr>
         <tr><td style="color:#6366f1;font-weight:600;">DM总曝光</td><td style="color:#6366f1;font-weight:700;">767.9M</td><td>—</td><td>7月27日</td><td>= Meta 113.0M + TT 585.9M + Youtube 69.0M</td></tr>
         <tr><td style="color:#f59e0b;font-weight:600;">3M 爆款视频数量</td><td style="color:#f59e0b;font-weight:700;">24 条</td><td style="color:var(--orange);font-weight:600;">30 条（80% ⚠️）</td><td>7月27日</td><td>播放量超 3M 的爆款视频，差 6 条达标</td></tr>
+        <tr><td style="color:#14b8a6;font-weight:600;">广告舆情正面率</td><td style="color:#14b8a6;font-weight:700;">13.6%</td><td>—</td><td>7月27日</td><td>3,607 条评论，负面率仅 1.7%，总互动 46,659</td></tr>
       </tbody>
     </table>
-    <div class="note">数据源：飞书电子表格 · Token: Jz2ksjkPXhrHbWttRcOcsu2ynUh</div>
+    <div class="note">数据源：飞书电子表格 · SOV Token: Jz2ksjkPXhrHbWttRcOcsu2ynUh · 舆情来源：TikTok Paid Comment</div>
   </div>
 </div>
 <script>
