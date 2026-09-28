@@ -293,8 +293,7 @@ new Chart(document.getElementById('spendChart'), {
     maintainAspectRatio: false,
     plugins: { legend: { position:'bottom' } },
     scales: {
-      y: { beginAtZero:true, max:220, position:'left', ticks:{ callback:function(v){return v+'%'} }, title:{ display:true, text:'Progress (%)' } },
-      grid: { drawOnChartArea:false }
+      y: { beginAtZero:true, max:220, position:'left', ticks:{ callback:function(v){return v+'%'} }, title:{ display:true, text:'Progress (%)' }, grid:{ drawOnChartArea:false } }
     }
   }
 });
