@@ -284,8 +284,8 @@ new Chart(document.getElementById('spendChart'), {
   data: {
     labels: spendLabels,
     datasets: [
-      { label:'Spend Progress (%)', data:spendProgress, borderColor:'#8b5cf6', backgroundColor:'rgba(139,92,246,.12)', tension:.3, fill:true, pointRadius:4, yAxisID:'y' },
-      { label:'Exposure Progress (%)', data:exposureProgress, borderColor:'#0d9488', backgroundColor:'rgba(13,148,136,.10)', tension:.3, fill:true, pointRadius:4, yAxisID:'y', borderDash:[5,3] }
+      { label:'Spend Progress (%)', data:spendProgress, borderColor:'#8b5cf6', backgroundColor:'rgba(139,92,246,.12)', tension:0.3, fill:true, pointRadius:4 },
+      { label:'Exposure Progress (%)', data:exposureProgress, borderColor:'#0d9488', backgroundColor:'rgba(13,148,136,.10)', tension:0.3, fill:true, pointRadius:4, borderDash:[5,3] }
     ]
   },
   options: {
@@ -293,7 +293,12 @@ new Chart(document.getElementById('spendChart'), {
     maintainAspectRatio: false,
     plugins: { legend: { position:'bottom' } },
     scales: {
-      y: { beginAtZero:true, max:220, position:'left', ticks:{ callback:function(v){return v+'%'} }, title:{ display:true, text:'Progress (%)' }, grid:{ drawOnChartArea:false } }
+      y: {
+        beginAtZero: true,
+        max: 220,
+        ticks: { callback: function(v) { return v + '%'; } },
+        title: { display: true, text: 'Progress (%)' }
+      }
     }
   }
 });
